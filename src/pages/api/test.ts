@@ -27,7 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-        sgMail.setApiKey("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")
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
         const { firstName, lastName, email, message } = req.body;
 
         const msg = {
